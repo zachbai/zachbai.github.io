@@ -1,0 +1,50 @@
+$font-stack: Roboto Mono, monospace;
+$color-teal: #439CAF;
+$color-teal-light: #54C7DF;
+$color-white: #F4FFF8;
+
+.container {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  background-color: $color-teal;
+}
+
+.header {
+  display:flex;
+  margin: 5px;
+}
+
+.header-right {
+  margin: 5px;
+  top: 0px;
+  right: 0px;
+}
+
+.header-text {
+  flex: 1;
+  margin-top: 5px;
+  margin-right: 5px;
+  top: 0px;
+  left: 0px;
+  font-family: $font-stack;
+  font-size: 48px;
+  color: $color-white;
+}
+
+.description-text {
+  font-family: $font-stack;
+  font-size: 36px;
+  color: $color-white;
+}
+.icon {
+  outline: none;
+  text-decoration: none;
+  color: $color-teal-light;
+  margin: 5px;
+
+  &:hover {
+    color: #71E2AE;
+  }
+}
