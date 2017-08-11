@@ -1,0 +1,30 @@
+.header {
+  display:flex;
+  background-color: $color-teal;
+  padding: 7px;
+}
+
+.header-right {
+  top: 0px;
+  right: 0px;
+}
+
+.header-text {
+  flex: 1;
+  top: 0px;
+  left: 0px;
+  font-family: $font-stack;
+  font-size: 48px;
+  color: $color-white;
+}
+
+.icon {
+  outline: none;
+  text-decoration: none;
+  color: $color-teal-light;
+  margin: 5px;
+
+  &:hover {
+    color: #71E2AE;
+  }
+}

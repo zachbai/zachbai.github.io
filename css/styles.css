@@ -1,32 +1,18 @@
-.container {
-  display: flex;
-  width: 100%;
-  height: 100%;
-  flex-direction: column;
-  background-color: #439CAF; }
-
 .header {
   display: flex;
-  margin: 5px; }
+  background-color: #439CAF;
+  padding: 7px; }
 
 .header-right {
-  margin: 5px;
   top: 0px;
   right: 0px; }
 
 .header-text {
   flex: 1;
-  margin-top: 5px;
-  margin-right: 5px;
   top: 0px;
   left: 0px;
   font-family: Roboto Mono, monospace;
   font-size: 48px;
-  color: #F4FFF8; }
-
-.description-text {
-  font-family: Roboto Mono, monospace;
-  font-size: 36px;
   color: #F4FFF8; }
 
 .icon {
@@ -36,5 +22,20 @@
   margin: 5px; }
   .icon:hover {
     color: #71E2AE; }
+
+.container {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  background-color: #8BDBE6; }
+
+.description {
+  margin: 7px; }
+
+.description-text {
+  font-family: Roboto Mono, monospace;
+  font-size: 22px;
+  color: #F4FFF8; }
 
 /*# sourceMappingURL=styles.css.map */

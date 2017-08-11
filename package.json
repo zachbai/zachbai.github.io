@@ -18,5 +18,10 @@
   "homepage": "https://github.com/zachbai/zachbai.github.io#readme",
   "dependencies": {
     "animejs": "^2.0.2"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-preset-env": "^1.6.0",
+    "webpack": "^3.4.1"
   }
 }
