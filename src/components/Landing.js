@@ -10,19 +10,19 @@ const Landing = (props) => {
         Zachry Bai
       </div>
       <div className={classNames('landing-links')}>
-        <div className={classNames('landing-link')} onClick={props.toggleModal}>
+        <div className={classNames('landing-link')} onClick={props.introClicked}>
           intro
         </div>
         <div className={classNames('landing-slash')}>
           /
         </div>
-        <div className={classNames('landing-link')} onClick={props.toggleModal}>
+        <div className={classNames('landing-link')} onClick={props.experienceClicked}>
           experience
         </div>
         <div className={classNames('landing-slash')}>
           /
         </div>
-        <div className={classNames('landing-link')} onClick={props.toggleModal}>
+        <div className={classNames('landing-link')} onClick={props.contactClicked}>
           contact
         </div>
       </div>

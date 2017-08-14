@@ -3,5 +3,13 @@
   position: fixed;
   height: 80%;
   width: 60%;
+  padding: 20px;
   flex: 1;
+}
+
+.modal-header-text {
+  font-family: $font;
+  font-size: 48px;
+  font-weight: bold;
+  color: $black;
 }
