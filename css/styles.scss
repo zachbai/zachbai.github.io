@@ -1,24 +1,4 @@
-$font-stack: Merriweather;
-$color-teal: #439CAF;
-$color-teal-light: #54C7DF;
-$color-white: #F4FFF8;
-
-@import 'header';
-
-.container {
-  display: flex;
-  width: 100%;
-  height: 100%;
-  flex-direction: column;
-  background-color: #7432c9;
-}
-
-.description {
-  margin: 7px;
-}
-
-.description-text {
-  font-family: $font-stack;
-  font-size: 22px;
-  color: $color-white;
-}
+@import 'constants';
+@import 'app';
+@import 'landing';
+@import 'modal';

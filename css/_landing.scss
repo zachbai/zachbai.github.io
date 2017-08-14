@@ -1,0 +1,58 @@
+$vertical-spacing: 50px;
+
+.landing-container {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  background-color: $grey-transparent-off;
+  transition: background-color, 0.4s;
+
+  &.on {
+    background-color: $grey-transparent;
+  }
+}
+
+.landing-header-text {
+  font-family: $font;
+  font-size: 56px;
+  font-weight: bold;
+  color: $black;
+  letter-spacing: 0.1em;
+  margin-bottom: $vertical-spacing;
+}
+
+.landing-links {
+  display: inherit;
+  flex-direction: row;
+  justify-content: center;
+  margin-bottom: $vertical-spacing;
+}
+
+.landing-link {
+  font-family: $font;
+  font-size: 36px;
+  padding: 20px;
+  color: $black;
+  transition: color, 0.3s;
+
+  &:hover {
+    color: $blue;
+    fill: $blue;
+  }
+
+  &.icon {
+    height: 50px;
+    width: 50px;
+  }
+}
+
+.landing-slash {
+  font-family: $font;
+  font-size: 56px;
+  font-weight: bold;
+  color: $black;
+  margin-top: 7px;
+}
