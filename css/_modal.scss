@@ -1,8 +1,33 @@
-.modal-container {
-  background-color: $white;
+.modals-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
   position: fixed;
+  height: 100%;
+  width: 300%;
+  transition: left, 0.3s;
+  left: 0%;
+
+  &.intro {
+    left: 0%
+  }
+
+  &.experience {
+    left: -100%;
+  }
+
+  &.contact {
+    left: -200%;
+  }
+}
+
+.modal-container {
+  display: flex;
+  background-color: $white;
   height: 80%;
-  width: 60%;
+  margin-left: 100px;
+  margin-right: 100px;
   padding: 20px;
   flex: 1;
 }

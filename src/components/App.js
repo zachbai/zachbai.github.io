@@ -41,21 +41,14 @@ export default class App extends Component {
   }
 
   renderModal(mode) {
-    switch (mode) {
-      case MODAL_MODES.INTRO:
-        return <IntroModal />;
-        break;
-      case MODAL_MODES.EXPERIENCE:
-        return <ExperienceModal />;
-        break;
-      case MODAL_MODES.CONTACT:
-        return <ContactModal />;
-        break;
-      default:
-        console.error("Invalid mode");
-        return null;
-        break;
-    }
+    return (
+      <div className={classNames('modals-container', mode)}
+          onClick={this.toggleModal.bind(this)}>
+        <IntroModal />,
+        <ExperienceModal />,
+        <ContactModal />
+      </div>
+    );
   }
 
   render() {

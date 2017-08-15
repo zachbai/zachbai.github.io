@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 const classNames = require('classnames');
 
 const Landing = (props) => {
+
   return (
     <div className={classNames('landing-container',
         props.modalOn ? 'on' : null)}
