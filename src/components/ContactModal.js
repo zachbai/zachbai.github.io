@@ -3,7 +3,11 @@ const classNames = require('classnames');
 
 const ContactModal = (props) => {
   return (
-    <div className={classNames('modal-container')}>
+    <div className={classNames('modal-container')}
+      onClick={(e) => {
+         e.stopPropagation();
+         e.nativeEvent.stopImmediatePropagation();
+     }}>
       <div className={classNames('modal-header-container')}>
         <div className={classNames('modal-header-text')}>
           contact

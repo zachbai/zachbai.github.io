@@ -3,7 +3,11 @@ const classNames = require('classnames');
 
 const IntroModal = (props) => {
   return (
-    <div className={classNames('modal-container')}>
+    <div className={classNames('modal-container')}
+      onClick={(e) => {
+      e.stopPropagation();
+      e.nativeEvent.stopImmediatePropagation();
+    }}>
       <div className={classNames('modal-header-container')}>
         <div className={classNames('modal-header-text')}>
           intro
@@ -33,7 +37,7 @@ const IntroModal = (props) => {
         </p>
       </div>
       <div className={classNames('modal-footer-container')}>
-        <a className={classNames('modal-link', 'download')}>
+        <a className={classNames('modal-link', 'download')} href="../../assets/resume.pdf" download>
           resume
           <i className={classNames('fa fa-download', 'download-icon')}>
           </i>

@@ -10,11 +10,11 @@ $vertical-spacing: 50px;
 }
 
 .landing-header-text {
-  font-family: $font;
+  font-family: $header-font;
   font-size: 56px;
   font-weight: bold;
   color: $black;
-  letter-spacing: 0.1em;
+  // letter-spacing: 0.1em;
   margin-bottom: $vertical-spacing;
 }
 
@@ -22,7 +22,13 @@ $vertical-spacing: 50px;
   display: inherit;
   flex-direction: row;
   justify-content: center;
+  letter-spacing: 0.2em;
+  text-align: center;
   margin-bottom: $vertical-spacing;
+
+  &.text {
+    margin-left: 55px;
+  }
 }
 
 .landing-link {

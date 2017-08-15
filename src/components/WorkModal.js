@@ -5,7 +5,11 @@ const classNames = require('classnames');
 
 const WorkModal = (props) => {
   return (
-    <div className={classNames('modal-container', 'experience')}>
+    <div className={classNames('modal-container', 'experience')}
+      onClick={(e) => {
+      e.stopPropagation();
+      e.nativeEvent.stopImmediatePropagation();
+    }}>
       <div className={classNames('modal-header-container')}>
         <div className={classNames('modal-header-text')}>
           experience
