@@ -7,12 +7,6 @@ $vertical-spacing: 50px;
   flex-direction: column;
   justify-content: center;
   text-align: center;
-  background-color: $grey-transparent-off;
-  transition: background-color, 0.4s;
-
-  &.on {
-    background-color: $grey-transparent;
-  }
 }
 
 .landing-header-text {
@@ -41,12 +35,18 @@ $vertical-spacing: 50px;
 
   &:hover {
     color: $blue;
-    fill: $blue;
   }
+}
 
-  &.icon {
-    height: 50px;
-    width: 50px;
+.landing-icon {
+  font-size: 36px;
+  color: $black;
+  cursor: pointer;
+  transition: color, 0.3s;
+  margin: 10px;
+
+  &:hover {
+    color: $blue;
   }
 }
 

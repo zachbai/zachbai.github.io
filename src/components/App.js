@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import Landing from './Landing.js';
 import IntroModal from './IntroModal.js';
-import ExperienceModal from './ExperienceModal.js';
+import WorkModal from './WorkModal.js';
 import ContactModal from './ContactModal.js';
 
 const classNames = require('classnames');
 
 const MODAL_MODES = {
   INTRO: 'intro',
-  EXPERIENCE: 'experience',
+  WORK: 'work',
   CONTACT: 'contact'
 };
 
@@ -21,31 +21,41 @@ export default class App extends Component {
     };
   }
 
-  toggleModal(mode) {
+  toggleModal() {
     this.setState({
-      modalOn: !this.state.modalOn,
-      modalMode: mode
+      modalOn: !this.state.modalOn
     });
   }
 
-  introClicked() {
-    this.toggleModal(MODAL_MODES.INTRO);
+  switchModes(mode) {
+    this.setState({
+      modalMode: mode
+    });
+
+    if (!this.state.modalOn) {
+        this.toggleModal();
+    }
   }
 
-  experienceClicked() {
-    this.toggleModal(MODAL_MODES.EXPERIENCE);
+  introClicked() {
+    this.switchModes(MODAL_MODES.INTRO);
+  }
+
+  workClicked() {
+    this.switchModes(MODAL_MODES.WORK);
   }
 
   contactClicked() {
-    this.toggleModal(MODAL_MODES.CONTACT);
+    this.switchModes(MODAL_MODES.CONTACT);
   }
 
-  renderModal(mode) {
+  renderModals(mode) {
     return (
-      <div className={classNames('modals-container', mode)}
+      <div className={classNames('modals-container', this.state.modalMode,
+          this.state.modalOn ? 'on' : null)}
           onClick={this.toggleModal.bind(this)}>
         <IntroModal />,
-        <ExperienceModal />,
+        <WorkModal />,
         <ContactModal />
       </div>
     );
@@ -54,18 +64,12 @@ export default class App extends Component {
   render() {
     return (
       <div className={classNames('app-container')}>
-        {
-          this.state.modalOn
-          ? this.renderModal(this.state.modalMode)
-          : null
-        }
         <Landing
-          modalOn={this.state.modalOn}
-          toggleModal={this.toggleModal.bind(this)}
           introClicked={this.introClicked.bind(this)}
-          experienceClicked={this.experienceClicked.bind(this)}
+          workClicked={this.workClicked.bind(this)}
           contactClicked={this.contactClicked.bind(this)}
           />
+        { this.renderModals(this.state.modalMode) }
       </div>
     );
   }

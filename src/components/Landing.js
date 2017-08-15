@@ -17,8 +17,8 @@ const Landing = (props) => {
         <div className={classNames('landing-slash')}>
           /
         </div>
-        <div className={classNames('landing-link')} onClick={props.experienceClicked}>
-          experience
+        <div className={classNames('landing-link')} onClick={props.workClicked}>
+          work
         </div>
         <div className={classNames('landing-slash')}>
           /
@@ -28,11 +28,11 @@ const Landing = (props) => {
         </div>
       </div>
       <div className={classNames('landing-links')}>
-        <a href="https://github.com/zachbai">
-          <img className={classNames('landing-link', 'icon')} src="../../assets/github.png"/>
+        <a href="https://github.com/zachbai" target="_blank">
+          <i className={classNames('fa fa-github', 'landing-icon', 'icon')}></i>
         </a>
-        <a href="https://linkedin.com/in/zachbai">
-          <img className={classNames('landing-link', 'icon')} src="../../assets/linkedin.png"/>
+        <a href="https://linkedin.com/in/zachbai" target="_blank">
+          <i className={classNames('fa fa-linkedin', 'landing-icon', 'icon')}></i>
         </a>
       </div>
     </div>

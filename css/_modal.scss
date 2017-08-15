@@ -2,19 +2,30 @@
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  align-items: center;
+  align-items: flex-start;
   position: fixed;
   height: 100%;
   width: 300%;
-  transition: left, 0.3s;
+  transition: left, 0.5s, z-index, 0.5s, opacity, 0.5s;
   left: 0%;
+  padding-top: 50px;
+  opacity: 0;
+  z-index: -1;
 
-  &.intro {
-    left: 0%
+  &.on {
+    background-color: $grey-transparent;
+    z-index: 1;
+    opacity: 1;
   }
 
-  &.experience {
+  &.intro {
+    left: 0%;
+  }
+
+  &.work {
+    position: absolute;
     left: -100%;
+    height: 200%;
   }
 
   &.contact {
@@ -24,17 +35,76 @@
 
 .modal-container {
   display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
   background-color: $white;
   height: 80%;
   margin-left: 100px;
   margin-right: 100px;
-  padding: 20px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  padding-left: 60px;
+  padding-right: 60px;
   flex: 1;
 }
 
+.modal-header-container, .modal-footer-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .modal-header-text {
+  top: 0px;
+  left: 0px;
+  position: relative;
   font-family: $font;
   font-size: 48px;
   font-weight: bold;
+  margin-bottom: 30px;
   color: $black;
+}
+
+.modal-body-text {
+  font-family: $font;
+  font-size: 20px;
+  color: $black;
+  margin-bottom: 40px;
+  line-height: 150%;
+}
+
+.modal-link {
+  font-size: 36px;
+  color: $grey;
+  transition: color, 0.3s;
+  margin-right: 10px;
+
+  &:hover {
+    color: $dark-blue;
+  }
+
+  &.download {
+    font-family: $font;
+    font-size: 20px;
+    color: $blue;
+    cursor: pointer;
+
+    &:hover {
+      color: $dark-blue;
+    }
+  }
+}
+
+.download-icon {
+  font-size: 20px;
+  color: inherit;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.me-image {
+  align-self: flex-end;
+  height: 180px;
+  width: 180px;
 }
