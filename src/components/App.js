@@ -64,6 +64,11 @@ export default class App extends Component {
   render() {
     return (
       <div className={classNames('app-container')}>
+        <div className={classNames('modals-indicator-bar', this.state.modalOn ? 'on': null)}>
+          <div className={classNames('modals-indicator',
+            this.state.modalOn ? 'on' : null, this.state.modalMode)}>
+          </div>
+        </div>
         <Landing
           introClicked={this.introClicked.bind(this)}
           workClicked={this.workClicked.bind(this)}
