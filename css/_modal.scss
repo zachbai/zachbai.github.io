@@ -154,13 +154,29 @@
 }
 
 .modal-close {
-  font-size: 36px;
-  position: relative;
-  top: 30px;
-  right: 60px;
-  color: $grey;
+  position: fixed;
+  top: 10px;
+  right: 0px;
+  height: 40px;
+  width: 40px;
+  background-color: $grey;
+  z-index: 3;
+  color: $black;
+  text-align: center;
+  opacity: 0;
+  transition: opacity, 0.3s;
+
+  &.on {
+    opacity: 1;
+  }
 
   &:hover {
-    color: $blue;
+    color: $white;
+    background-color: $blue;
   }
+}
+
+.modal-close-icon {
+  font-size: 36px;
+  color: inherit;
 }

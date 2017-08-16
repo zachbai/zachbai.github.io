@@ -7,7 +7,6 @@ const classNames = require('classnames');
 const WorkModal = (props) => {
   return (
     <div className={classNames('modal-container', 'experience')}>
-      <i className={classNames('fa fa-times', 'modal-close')} onClick={props.closeModal}></i>
      <ModeSwitch className='modal-prev' switchMode={props.prevMode}/>
       <div className={classNames('modal-content-container')}>
         <div className={classNames('modal-header-container')}>

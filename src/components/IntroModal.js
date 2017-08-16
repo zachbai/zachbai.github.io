@@ -5,7 +5,6 @@ const classNames = require('classnames');
 const IntroModal = (props) => {
   return (
     <div className={classNames('modal-container')}>
-      <i className={classNames('fa fa-times', 'modal-close')} onClick={props.closeModal}></i>
       <div className={classNames('modal-content-container')}>
         <div className={classNames('modal-header-container')}>
           <div className={classNames('modal-header-text')}>

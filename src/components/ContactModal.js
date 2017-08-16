@@ -5,7 +5,6 @@ const classNames = require('classnames');
 const ContactModal = (props) => {
   return (
     <div className={classNames('modal-container')}>
-    <i className={classNames('fa fa-times', 'modal-close')}></i>
      <ModeSwitch className='modal-prev' switchMode={props.prevMode}/>
      <div className={classNames('modal-content-container')}>
         <div className={classNames('modal-header-container')}>

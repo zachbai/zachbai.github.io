@@ -77,6 +77,10 @@ export default class App extends Component {
           onClickedLink={this.switchModes.bind(this)}
           />
         { this.renderModals(this.getActiveMode()) }
+        <div className={classNames('modal-close', this.getActiveMode() != null ? 'on': null)}
+          onClick={this.closeModal.bind(this)}>
+          <i className={classNames('fa fa-times', 'modal-close-icon')}></i>
+        </div>
       </div>
     );
   }
