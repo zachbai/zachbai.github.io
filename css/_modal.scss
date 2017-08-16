@@ -23,6 +23,8 @@
     opacity: 1;
     left: -100%;
     height: 200%;
+	position: absolute;
+	overflow-x: hidden;
   }
 
   &.contact {
