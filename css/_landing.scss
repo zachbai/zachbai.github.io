@@ -13,8 +13,7 @@ $vertical-spacing: 50px;
   font-family: $header-font;
   font-size: 56px;
   font-weight: bold;
-  color: $black;
-  // letter-spacing: 0.1em;
+  color: $white;
   margin-bottom: $vertical-spacing;
 }
 
@@ -35,7 +34,7 @@ $vertical-spacing: 50px;
   font-family: $font;
   font-size: 36px;
   padding: 20px;
-  color: $black;
+  color: $white;
   cursor: pointer;
   transition: color, 0.3s;
 
@@ -46,7 +45,7 @@ $vertical-spacing: 50px;
 
 .landing-icon {
   font-size: 36px;
-  color: $black;
+  color: $grey;
   cursor: pointer;
   transition: color, 0.3s;
   margin: 10px;
@@ -60,6 +59,6 @@ $vertical-spacing: 50px;
   font-family: $font;
   font-size: 56px;
   font-weight: bold;
-  color: $black;
+  color: $white;
   margin-top: 7px;
 }
