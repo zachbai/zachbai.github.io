@@ -8,7 +8,7 @@ const WorkModal = (props) => {
   return (
     <div className={classNames('modal-container', 'experience')}>
      <ModeSwitch className='modal-prev' switchMode={props.prevMode}/>
-      <div className={classNames('modal-content-container')}>
+      <div className={classNames('modal-content-container', 'experience')}>
         <div className={classNames('modal-header-container')}>
           <div className={classNames('modal-header-text')}>
             experience
@@ -17,7 +17,7 @@ const WorkModal = (props) => {
         <div className={classNames('modal-body-container')}>
           <Experience
             header="Software Developer Intern"
-            subheader="IMC Financial Markets"
+            subheader="IMC Financial Markets (June - August 2017)"
             description="Built a missed-trades analysis tool for high-frequency
               traders.  Wrote performant JavaSpark code to handle data processing
               with terabytes of trades and market data. Implemented logic to
@@ -26,7 +26,7 @@ const WorkModal = (props) => {
             image="../../assets/imc.png"/>
           <Experience
             header="iOS Developer Intern"
-            subheader="Samsung Accelerator"
+            subheader="Samsung Accelerator (June - August 2016)"
             description="Worked with one other engineer to build the iOS app for
               Unclip, a cross-platform video editing and sharing application
               geared toward action sports athletes. Built responsive video gallery
@@ -36,7 +36,7 @@ const WorkModal = (props) => {
               spherical metadata on 360° video files. Swift, iOS SDK. "
             image="../../assets/samsungacceleratorlogo.png"/>
         </div>
-        <div style={{height: "80px"}}>
+        <div style={{height: "150px"}}>
         </div>
         <div className={classNames('modal-header-container')}>
           <div className={classNames('modal-header-text')}>
