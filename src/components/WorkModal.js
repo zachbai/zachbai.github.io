@@ -1,20 +1,23 @@
 import React,  { Component } from 'react';
+import classNames from 'classnames';
+import PropTypes from 'prop-types';
+
 import Experience from './Experience.js';
 import ModeSwitch from './ModeSwitch.js';
-const classNames = require('classnames');
+import ModalHeaderFooter from './ModalHeaderFooter.js';
 
+WorkModal.propTypes = {
+  activeMode: PropTypes.string,
+  nextMode: PropTypes.func.isRequired,
+  prevMode: PropTypes.func.isRequired,
+}
 
-const WorkModal = (props) => {
+function WorkModal(props) {
   return (
-    <div className={classNames('modal-container', 'experience')}>
+    <div className={classNames('modal-container', 'isExperience', props.activeMode)}>
      <ModeSwitch className='modal-prev' switchMode={props.prevMode}/>
-      <div className={classNames('modal-content-container', 'experience')}>
-        <div className={classNames('modal-header-container')}>
-          <div className={classNames('modal-header-text')}>
-            experience
-          </div>
-        </div>
-        <div className={classNames('modal-body-container')}>
+      <div className={classNames('modal-content-container')}>
+        <ModalHeaderFooter headerText='experience'/>
           <Experience
             header="Software Developer Intern"
             subheader="IMC Financial Markets (June - August 2017)"
@@ -35,31 +38,22 @@ const WorkModal = (props) => {
               Patched FFmpeg, a video encoding/decoding library, to read and write
               spherical metadata on 360° video files. Swift, iOS SDK. "
             image="../../assets/samsungacceleratorlogo.png"/>
-        </div>
-        <div style={{height: "150px"}}>
-        </div>
-        <div className={classNames('modal-header-container')}>
-          <div className={classNames('modal-header-text')}>
-            projects
-          </div>
-        </div>
-        <div className={classNames('modal-body-container')}>
-          <Experience
-            header="Pollen"
-            description="Pollen is a cross-platform campus polling app developed
-              to better assess and inform student opinions on campus issues.
-              Built the entire mobile client for Android and iOS. Tech stack
-              includes React Native, Express.js, MongoDB, websockets, Expo, Docker.
-              Expect to deploy in Fall 2017."
-            emage="../../assets/samsungacceleratorlogo.png"/>
-          <Experience
-            header="hillydilly2spotify"
-            description="Built a simple web app built to seamlessly convert the
-              newest posts from hillydilly.com, one of my favorite music blogs, to
-              Spotify playlists.  Tech stack includes Flask, ReactJs, SASS, Webpack.
-              Powered by Spotify’s web API. "
-            image="../../assets/samsungacceleratorlogo.png"/>
-        </div>
+        <ModalHeaderFooter headerText='projects'/>
+        <Experience
+          header="Pollen"
+          description="Pollen is a cross-platform campus polling app developed
+            to better assess and inform student opinions on campus issues.
+            Built the entire mobile client for Android and iOS. Tech stack
+            includes React Native, Express.js, MongoDB, websockets, Expo, Docker.
+            Expect to deploy in Fall 2017."
+          image="../../assets/samsungacceleratorlogo.png"/>
+        <Experience
+          header="hillydilly2spotify"
+          description="Built a simple web app built to seamlessly convert the
+            newest posts from hillydilly.com, one of my favorite music blogs, to
+            Spotify playlists.  Tech stack includes Flask, ReactJs, SASS, Webpack.
+            Powered by Spotify’s web API. "
+          image="../../assets/samsungacceleratorlogo.png"/>
       </div>
      <ModeSwitch className='modal-next' switchMode={props.nextMode}/>
     </div>

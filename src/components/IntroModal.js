@@ -1,17 +1,20 @@
 import React,  { Component } from 'react';
-import ModeSwitch from './ModeSwitch.js';
-const classNames = require('classnames');
+import classNames from 'classnames';
+import PropTypes from 'prop-types';
 
-const IntroModal = (props) => {
+import ModeSwitch from './ModeSwitch.js';
+import ModalHeaderFooter from './ModalHeaderFooter.js';
+
+IntroModal.propTypes = {
+    activeMode: PropTypes.string,
+    nextMode: PropTypes.func.isRequired
+};
+
+function IntroModal(props) {
   return (
-    <div className={classNames('modal-container')}>
+    <div className={classNames('modal-container', 'isIntro', props.activeMode)}>
       <div className={classNames('modal-content-container')}>
-        <div className={classNames('modal-header-container')}>
-          <div className={classNames('modal-header-text')}>
-            intro
-          </div>
-          <img className={classNames('me-image')} src={'../../assets/me.png'}/>
-        </div>
+        <ModalHeaderFooter headerText='intro' imageSrc='assets/me.png'/>
         <div className={classNames('modal-body-container')}>
           <p className={classNames('modal-body-text')}>
             Hey, I'm Zach.

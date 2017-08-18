@@ -1,17 +1,21 @@
 import React,  { Component } from 'react';
-import ModeSwitch from './ModeSwitch.js';
-const classNames = require('classnames');
+import classNames from 'classnames';
+import PropTypes from 'prop-types';
 
-const ContactModal = (props) => {
+import ModeSwitch from './ModeSwitch.js';
+import ModalHeaderFooter from './ModalHeaderFooter.js';
+
+ContactModal.propTypes = {
+  activeMode: PropTypes.string,
+  prevMode: PropTypes.func.isRequired,
+};
+
+function ContactModal(props) {
   return (
-    <div className={classNames('modal-container')}>
+    <div className={classNames('modal-container', 'isContact', props.activeMode)}>
      <ModeSwitch className='modal-prev' switchMode={props.prevMode}/>
      <div className={classNames('modal-content-container')}>
-        <div className={classNames('modal-header-container')}>
-          <div className={classNames('modal-header-text')}>
-            contact
-          </div>
-        </div>
+        <ModalHeaderFooter headerText='contact'/>
         <div className={classNames('modal-body-container')}>
           <p className={classNames('modal-body-text')}>
             Drop me a line!

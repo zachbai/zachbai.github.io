@@ -1,83 +1,96 @@
-.modals-container {
-  background-color: $black;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: flex-start;
-  position: fixed;
-  height: 100%;
-  width: 300%;
-  transition: left, 0.5s, z-index, 0.5s, opacity, 0.5s;
-  left: 0%;
-  opacity: 0;
-  z-index: -1;
-  overflow: hidden;
-
-  &.intro {
-    z-index: 1;
-    opacity: 1;
-    left: 0%;
-  }
-
-  &.work {
-    z-index: 1;
-    opacity: 1;
-    left: -100%;
-  }
-
-  &.contact {
-    z-index: 1;
-    opacity: 1;
-    left: -200%;
-  }
-}
-
 .modal-container {
   display: flex;
-  height: 100%;
-  width: 33%;
-  height: 100%;
+  flex: 1;
+  position: absolute;
+  width: 100%;
+  min-height: 100%;
+  background-color: $black;
+  z-index: -1;
+  transition: left, 0.3s, z-index, 0.3s;
+
+  &.isIntro {
+    &.intro {
+      left: 0px;
+      z-index: 1;
+    }
+    &.work {
+      left: -100%;
+      z-index: 1;
+    }
+    &.contact {
+      left: -200%;
+      z-index: 1;
+    }
+  }
+
+  &.isExperience {
+    &.intro {
+      left: 100%;
+      z-index: 1;
+    }
+    &.work {
+      left: 0px;
+      z-index: 1;
+    }
+    &.contact {
+      left: -100%;
+      z-index: 1;
+    }
+  }
+
+  &.isContact {
+    &.intro {
+      left: 200%;
+      z-index: 1;
+    }
+    &.work {
+      left: 100%;
+      z-index: 1;
+    }
+    &.contact {
+      left: 0px;
+      z-index: 1;
+    }
+  }
 }
 
 .modal-content-container {
+  padding: 100px;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  width: 100%;
-  height: 100%;
-  flex: 1;
-  z-index: 2;
-  padding: 100px;
+  justify-content: center;
   box-sizing: border-box;
-
-  &.experience {
-    justify-content: space-around;
-  }
+  overflow-y: scroll;
 }
 
 .modal-header-container, .modal-footer-container {
   display: flex;
-  flex-direction: row;
+  flex: 1;
   justify-content: space-between;
   align-items: center;
 }
 
 .modal-header-text {
-  top: 0px;
-  left: 0px;
-  position: relative;
   font-family: $header-font;
   font-size: 48px;
   font-weight: bold;
-  margin-bottom: 30px;
-  color: $white;
+  color: $blue;
+  line-height: 150%;
+  text-overflow: clip;
+}
+
+.modal-body-container {
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  flex-wrap: nowrap;
 }
 
 .modal-body-text {
   font-family: $font;
   font-size: 20px;
   color: $white;
-  margin-bottom: 40px;
   line-height: 150%;
 }
 
@@ -85,7 +98,8 @@
   font-size: 36px;
   color: $grey;
   transition: color, 0.3s;
-  margin-right: 10px;
+  text-decoration: none;
+  margin-left: 10px;
 
   &:hover {
     color: $dark-blue;
@@ -95,6 +109,7 @@
     font-family: $font;
     font-size: 20px;
     color: $blue;
+    margin-left: 0px;
     cursor: pointer;
 
     &:hover {
@@ -112,74 +127,7 @@
 
 .me-image {
   align-self: flex-end;
-  height: 180px;
-  width: 180px;
-}
-
-.modals-indicator-bar {
-  position: fixed;
-  height: 10px;
-  width: 100%;
-  opacity: 0;
-  background-color: $grey;
-  top: 0px;
-  z-index: 2;
-  transition: opacity, 0.3s;
-
-  &.on {
-    opacity: 1
-  }
-}
-
-.modals-indicator {
-  background-color: $blue;
-  position: fixed;
-  width: 33%;
-  height: 10px;
-  transition: left, 0.3s, opacity, 0.3s;
-  opacity: 0;
-  z-index: 3;
-
-  &.intro {
-    left: 0%;
-    opacity: 1;
-  }
-
-  &.work {
-    left: 33%;
-    opacity: 1;
-  }
-
-  &.contact {
-    left: 66%;
-    opacity: 1;
-  }
-}
-
-.modal-close {
-  position: fixed;
-  top: 10px;
-  right: 0px;
-  height: 40px;
-  width: 40px;
-  background-color: $grey;
-  z-index: 3;
-  color: $black;
-  text-align: center;
-  opacity: 0;
-  transition: opacity, 0.3s;
-
-  &.on {
-    opacity: 1;
-  }
-
-  &:hover {
-    color: $white;
-    background-color: $blue;
-  }
-}
-
-.modal-close-icon {
-  font-size: 36px;
-  color: inherit;
+  height: 100%;
+  max-height: 150px;
+  object-fit: contain;
 }

@@ -1,0 +1,67 @@
+.modals-indicator-bar {
+  position: fixed;
+  height: 10px;
+  width: 100%;
+  opacity: 0;
+  background-color: $grey;
+  top: 0px;
+  z-index: 2;
+  transition: opacity, 0.3s;
+
+  &.on {
+    opacity: 1
+  }
+}
+
+.modals-indicator {
+  background-color: $blue;
+  position: fixed;
+  width: 33%;
+  height: 10px;
+  transition: left, 0.3s, opacity, 0.3s;
+  opacity: 0;
+  z-index: 3;
+
+  &.intro {
+    left: 0%;
+    opacity: 1;
+  }
+
+  &.work {
+    left: 33%;
+    opacity: 1;
+  }
+
+  &.contact {
+    left: 67%;
+    opacity: 1;
+  }
+}
+
+.modal-close {
+  position: fixed;
+  top: 10px;
+  right: 0px;
+  height: 40px;
+  width: 40px;
+  background-color: $grey;
+  z-index: 3;
+  color: $black;
+  text-align: center;
+  opacity: 0;
+  transition: opacity, 0.3s;
+
+  &.on {
+    opacity: 1;
+  }
+
+  &:hover {
+    color: $white;
+    background-color: $blue;
+  }
+}
+
+.modal-close-icon {
+  font-size: 36px;
+  color: inherit;
+}

@@ -15,6 +15,16 @@ export default class App extends Component {
     this.state = {
       activeModeIndex: null
     };
+    this.modals = [
+        <IntroModal nextMode={this.nextMode.bind(this)}
+          closeModal={this.closeModal.bind(this)}/>,
+        <WorkModal nextMode={this.nextMode.bind(this)}
+          prevMode={this.prevMode.bind(this)}
+          closeModal={this.closeModal.bind(this)}/>,
+        <ContactModal
+          prevMode={this.prevMode.bind(this)}
+          closeModal={this.closeModal.bind(this)}/>
+        ];
   }
 
   closeModal() {
@@ -51,19 +61,22 @@ export default class App extends Component {
     return MODES[this.state.activeModeIndex];
   }
 
-  renderModals(mode) {
-    return (
-      <div className={classNames('modals-container', this.getActiveMode())}>
-        <IntroModal nextMode={this.nextMode.bind(this)}
-          closeModal={this.closeModal.bind(this)}/>
-        <WorkModal nextMode={this.nextMode.bind(this)}
+  renderModals() {
+    return ([
+        <IntroModal
+          activeMode={this.getActiveMode()}
+          nextMode={this.nextMode.bind(this)}
+          closeModal={this.closeModal.bind(this)}/>,
+        <WorkModal
+          activeMode={this.getActiveMode()}
+          nextMode={this.nextMode.bind(this)}
           prevMode={this.prevMode.bind(this)}
-          closeModal={this.closeModal.bind(this)}/>
+          closeModal={this.closeModal.bind(this)}/>,
         <ContactModal
+          activeMode={this.getActiveMode()}
           prevMode={this.prevMode.bind(this)}
           closeModal={this.closeModal.bind(this)}/>
-      </div>
-    );
+    ]);
   }
 
   render() {
@@ -76,7 +89,7 @@ export default class App extends Component {
         <Landing
           onClickedLink={this.switchModes.bind(this)}
           />
-        { this.renderModals(this.getActiveMode()) }
+        { this.renderModals() }
         <div className={classNames('modal-close', this.getActiveMode() != null ? 'on': null)}
           onClick={this.closeModal.bind(this)}>
           <i className={classNames('fa fa-times', 'modal-close-icon')}></i>
