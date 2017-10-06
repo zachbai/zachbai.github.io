@@ -28,8 +28,8 @@ function IntroModal(props) {
 
           <p className={classNames('modal-body-text')}>
             I have a passion for creating and building things—
-            music and software, in particular.  You can find the source code for
-            this site, as well as some of my other projects at github.com/zachbai.
+            music and software, in particular.  You can find some of my work
+            at github.com/zachbai.
           </p>
 
           <p className={classNames('modal-body-text')}>
